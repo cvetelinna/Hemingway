@@ -25,14 +25,14 @@ public class PrintingHouse {
     private static double salary = 800;
 
     public PrintingHouse() {
-
+        //todo:add defaults
     }
 
     public PrintingHouse(double expectedIncome, double actualIncome, int printedEditionsCount, List<Employee> employees) {
         this.expectedIncome = expectedIncome;
         this.actualIncome = actualIncome;
         this.printedEditionsCount = printedEditionsCount;
-        this.employees = new ArrayList<>(); {
+        this.employees = employees; {
         };
     }
 
@@ -61,24 +61,6 @@ public class PrintingHouse {
                 ", printedEditionsCount=" + printedEditionsCount +
                 ", employees=" + employees +
                 '}';
-    }
-
-    public void fillEmployeeArray(){
-        Employee employee1 = new Employee(EmployeeType.MANAGER);
-        Employee employee2 = new Employee(EmployeeType.OPERATOR);
-        Employee employee3 = new Employee(EmployeeType.OPERATOR);
-        Employee employee4 = new Employee(EmployeeType.OPERATOR);
-        Employee employee5 = new Employee(EmployeeType.OPERATOR);
-        Employee employee6 = new Employee(EmployeeType.OPERATOR);
-        Employee employee7 = new Employee(EmployeeType.MANAGER);
-
-        employees.add(employee1);
-        employees.add(employee2);
-        employees.add(employee3);
-        employees.add(employee4);
-        employees.add(employee5);
-        employees.add(employee6);
-        employees.add(employee7);
     }
 
     public double sumSalaryExpenses() {
