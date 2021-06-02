@@ -1,23 +1,38 @@
 package com.company;
-public class Customer {
-    //Editions maybe should be a list of objects so we can request different amount of various editions
-    private int requrestedCount;
-    private Edition requestedEdition;
 
-    public Customer(int requrestedCount, Edition requestedEdition) {
+import java.util.List;
+
+public class Customer {
+    private int requrestedCount;
+    private List<Edition> editions;
+
+    public Customer(int requrestedCount, List<Edition> editions) {
         this.requrestedCount = requrestedCount;
-        this.requestedEdition = requestedEdition;
+        this.editions = editions;
     }
 
     public int getRequrestedCount() {
         return requrestedCount;
     }
 
-    public Edition getRequestedEdition() {
-        return requestedEdition;
+    public List<Edition> getEditions() {
+        return editions;
     }
 
-    public double incomeFromClient(){
-        return this.requrestedCount * this.requestedEdition.price();
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "requrestedCount=" + requrestedCount +
+                ", editions=" + editions +
+                '}';
+    }
+
+    public double calculateBookIncome(){
+        double price = 0;
+        for (Edition edition : editions)
+        {
+            price = edition.price();
+        }
+        return price * requrestedCount;
     }
 }
