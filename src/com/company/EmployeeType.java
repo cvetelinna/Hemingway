@@ -5,10 +5,6 @@ public enum EmployeeType {
 
     private int numVal;
 
-    EmployeeType() {
-
-    }
-
     EmployeeType(int numVal) {
         this.numVal = numVal;
     }
