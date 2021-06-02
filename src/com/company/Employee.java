@@ -1,10 +1,6 @@
 package com.company;
-
-import java.util.List;
-
 public class Employee {
     private EmployeeType employeeType;
-
 
     public Employee(EmployeeType employeeType) {
         this.employeeType = employeeType;
@@ -23,5 +19,4 @@ public class Employee {
         }
         else return false;
     }
-
 }

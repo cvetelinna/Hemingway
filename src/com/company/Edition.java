@@ -14,7 +14,6 @@ public class Edition  {
         this.paperType = paperType;
     }
 
-
     public String getTitle() {
         return title;
     }
@@ -44,7 +43,5 @@ public class Edition  {
     public double price() {
         return this.pageFormat.getFormatValue() * this.paperType.getNumVal() * pageCount;
     }
-
-
 
 }

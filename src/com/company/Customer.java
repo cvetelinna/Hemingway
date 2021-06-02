@@ -1,7 +1,4 @@
 package com.company;
-
-import java.util.List;
-
 public class Customer {
     //Editions maybe should be a list of objects so we can request different amount of various editions
     private int requrestedCount;

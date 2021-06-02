@@ -1,5 +1,4 @@
 package com.company;
-
 public enum EmployeeType {
     OPERATOR(1), MANAGER(2);
 
@@ -12,6 +11,5 @@ public enum EmployeeType {
     public int getNumVal() {
         return numVal;
     }
-
 
 }

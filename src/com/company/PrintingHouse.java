@@ -36,7 +36,6 @@ public class PrintingHouse {
         };
     }
 
-
     public double getExpectedIncome() {
         return expectedIncome;
     }
@@ -81,6 +80,4 @@ public class PrintingHouse {
         }
         return salary * employees.size();
     }
-
-
 }
