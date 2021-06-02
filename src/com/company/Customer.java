@@ -29,10 +29,12 @@ public class Customer {
 
     public double calculateBookIncome(){
         double price = 0;
+        double increaseInPrice = 0; // in order to profit
         for (Edition edition : editions)
         {
             price = edition.price();
+            increaseInPrice = price + price * 0.2;
         }
-        return price * requrestedCount;
+        return increaseInPrice * requrestedCount;
     }
 }
