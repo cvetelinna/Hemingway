@@ -7,9 +7,6 @@ public class Edition  {
     private PaperType paperType;
     //TODO: editions count
 
-    public Edition() {
-    }
-
     public Edition(String title, int pageCount, PageFormat pageFormat, PaperType paperType){
         this.title = title;
         this.pageCount = pageCount;

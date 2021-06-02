@@ -1,15 +1,15 @@
 package com.company;
 
 public enum PaperType{
-    NEWSPAPER(1), GLOSSY(3), STANDARD(2);
+    NEWSPAPER(0.1), GLOSSY(0.3), STANDARD(0.2);
 
-    private int numVal;
+    private double numVal;
 
-    PaperType(int numVal) {
+    PaperType(double numVal) {
         this.numVal = numVal;
     }
 
-    public int getNumVal() {
+    public double getNumVal() {
         return numVal;
     }
 

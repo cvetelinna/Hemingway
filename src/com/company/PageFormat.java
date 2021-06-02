@@ -1,15 +1,15 @@
 package com.company;
 
 public enum PageFormat {
-    А1(1), А2(2), А3(3), А4(4), А5(5);
+    А1(0.1), А2(0.2), А3(0.3), А4(0.4), А5(0.5);
 
-    private int formatValue;
+    private double formatValue;
 
-    PageFormat(int formatValue) {
+    PageFormat(double formatValue) {
         this.formatValue = formatValue;
     }
 
-    public int getFormatValue() {
+    public double getFormatValue() {
         return formatValue;
     }
 }
