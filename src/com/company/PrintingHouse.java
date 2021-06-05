@@ -73,4 +73,8 @@ public class PrintingHouse {
         }
         return salary * employees.size();
     }
+
+    public void startPrinting(Edition ed, int count){
+
+    }
 }
