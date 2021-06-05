@@ -5,13 +5,15 @@ public class Edition  {
     private int pageCount;
     private PageFormat pageFormat;
     private PaperType paperType;
+    private int requrestedCount;
     //TODO: editions count
 
-    public Edition(String title, int pageCount, PageFormat pageFormat, PaperType paperType){
+    public Edition(String title, int pageCount, PageFormat pageFormat, PaperType paperType, int requrestedCount){
         this.title = title;
         this.pageCount = pageCount;
         this.pageFormat = pageFormat;
         this.paperType = paperType;
+        this.requrestedCount = requrestedCount;
     }
 
     public String getTitle() {
@@ -30,6 +32,10 @@ public class Edition  {
         return paperType;
     }
 
+    public int getRequrestedCount() {
+        return requrestedCount;
+    }
+
     @Override
     public String toString() {
         return "Edition{" +
@@ -37,11 +43,20 @@ public class Edition  {
                 ", pageCount=" + pageCount +
                 ", pageFormat=" + pageFormat +
                 ", paperType=" + paperType +
+                ". requestedCount=" + requrestedCount +
                 '}';
     }
 
     public double price() {
-        return this.pageFormat.getFormatValue() * this.paperType.getNumVal() * pageCount;
+
+        return (this.pageFormat.getFormatValue() + this.paperType.getNumVal()) * this.pageCount;
     }
+
+    public double calculateBookIncome(){
+           double  increaseInPrice = price() + (price() * 0.4);
+           return increaseInPrice * requrestedCount;
+    }
+
+
 
 }
