@@ -16,19 +16,11 @@ public class Employee {
         return salary;
     }
 
-
     @Override
     public String toString() {
         return "Employee{" +
                 "employeeType=" + employeeType +
                 "salary=" + salary +
                 '}';
-    }
-
-    public boolean isManager() {
-        if (this.employeeType == EmployeeType.MANAGER){
-            return true;
-        }
-        else return false;
     }
 }

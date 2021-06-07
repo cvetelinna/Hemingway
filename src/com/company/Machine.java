@@ -1,30 +1,16 @@
 package com.company;
-
 import java.util.UUID;
-
-/*
-В печатницата има няколко печатни машини, които се зареждат с определен максимален брой листове хартия и могат да
- отпечатват цветно или черно-бяло.
-
- Всяка от тях може да отпечатва определен брой страници в минута, ако бъде заредена с хартия.
-Ако не е заредена с хартия, трябва да се хвърля изключение, което да показва колко е максималният брой на листовете хартия,
- в който тя може да се зареди. Печатницата разполага с няколко машини за печатане,
- трябва процесът на печатане на изданията да се извършва паралелно на всички машини.
-
-  За тази цел, трябва всяка машина да отпечатва изданията в отделна нишка
-  и да се показва на коя машина кое издание се отпечатва в момента.
-*/
-public class Machine {
+public class Machine{
     private Color color;
     private int maxCapacity;
-    private int throughout;
+    private int printPerMinute;
     private final UUID uuid;
 
 
-    public Machine(Color color, int maxCapacity, int throughout) {
+    public Machine(Color color, int maxCapacity, int printPerMinute) {
         this.color = color;
         this.maxCapacity = maxCapacity;
-        this.throughout = throughout;
+        this.printPerMinute = printPerMinute;
         this.uuid = UUID.randomUUID();
     }
 
@@ -36,8 +22,8 @@ public class Machine {
         return maxCapacity;
     }
 
-    public int getThroughout() {
-        return throughout;
+    public int getPrintPerMinute() {
+        return printPerMinute;
     }
 
     public UUID getUuid() {
@@ -49,16 +35,21 @@ public class Machine {
         return "Machines{" +
                 "color=" + color +
                 ", maxCapacity=" + maxCapacity +
-                ", throughout=" + throughout +
+                ", printPerMinute=" + printPerMinute +
                 ", uuid" + uuid +
                 '}';
     }
 
-    public void print(Edition edition){
-
+    protected void print(Edition edition) {
+        var printingDelay = (long)((double)60 / (double)this.printPerMinute * 1000);
         for (int i = 0; i < edition.getRequrestedCount(); i++) {
-            var str = String.format("Machine %s printed %s in %s color", this.uuid.toString(), edition.getTitle(), getColor());
-            System.out.println(str);
+            try {
+                Thread.sleep(printingDelay);
+                var str = String.format("Machine %s printed %s in %s color", this.uuid.toString(), edition.getTitle(), getColor());
+                System.out.println(str);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

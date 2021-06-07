@@ -52,10 +52,7 @@ public class Edition  {
     }
 
     public double calculateBookIncome(){
-           double  increaseInPrice = price() + (price() * 0.4);
+           double  increaseInPrice = price() * 1.4;
            return increaseInPrice * requrestedCount;
     }
-
-
-
 }
