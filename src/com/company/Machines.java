@@ -55,7 +55,12 @@ public class Machines {
     }
 
     public void print(Edition edition, int count){
-        for (int i = 0; i < count; i++) {
+        if (count > maxCapacity){
+            var message = String.format("Max capacity is s% !", maxCapacity);
+            throw new ArithmeticException(message);
+        }
+
+        for (int i = 0; i < maxCapacity; i++) {
             var str = String.format("Machine %s printed %s", this.uuid.toString(), edition.getTitle());
             System.out.println(str);
         }

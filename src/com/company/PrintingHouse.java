@@ -21,12 +21,14 @@ public class PrintingHouse {
     private int printedEditionsCount;
     private List<Employee> employees;
     private static double salary = 800;
+    private List<Machines> machines;
 
-    public PrintingHouse(double expectedIncome, double actualIncome, int printedEditionsCount, List<Employee> employees) {
+    public PrintingHouse(double expectedIncome, double actualIncome, int printedEditionsCount, List<Employee> employees, List<Machines> machines) {
         this.expectedIncome = expectedIncome;
         this.actualIncome = actualIncome;
         this.printedEditionsCount = printedEditionsCount;
         this.employees = employees;
+        this.machines = machines;
     }
 
     public double getExpectedIncome() {
@@ -45,6 +47,10 @@ public class PrintingHouse {
         return employees;
     }
 
+    public List<Machines> getMachines(){
+        return machines;
+    }
+
     @Override
     public String toString() {
         return "PrintingHouse{" +
@@ -52,6 +58,7 @@ public class PrintingHouse {
                 ", actualIncome=" + actualIncome +
                 ", printedEditionsCount=" + printedEditionsCount +
                 ", employees=" + employees +
+                ", machines=" + machines +
                 '}';
     }
 

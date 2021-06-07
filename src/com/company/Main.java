@@ -20,8 +20,13 @@ public class Main {
         System.out.println(test.price());
         System.out.println(test.calculateBookIncome());
 
+        List<Machines> mcs = new ArrayList<>();
+        mcs.add(new Machines(Color.BLACKANDWHITE, 3000, 2000));
+        mcs.add(new Machines(Color.BLACKANDWHITE, 3000, 2000));
+        mcs.add(new Machines(Color.BLACKANDWHITE, 3000, 2000));
 
-    PrintingHouse ph = new PrintingHouse(12000, 12200, 60, ems);
+
+    PrintingHouse ph = new PrintingHouse(12000, 12200, 60, ems, mcs);
         System.out.println(ph.sumSalaryExpenses());
     }
 
