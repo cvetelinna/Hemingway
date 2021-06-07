@@ -11,7 +11,6 @@ DONE: на 1 бр. от съответното издание, което кли
 
 */
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PrintingHouse {
@@ -21,9 +20,9 @@ public class PrintingHouse {
     private int printedEditionsCount;
     private List<Employee> employees;
     private static double salary = 800;
-    private List<Machines> machines;
+    private List<Machine> machines;
 
-    public PrintingHouse(double expectedIncome, double actualIncome, int printedEditionsCount, List<Employee> employees, List<Machines> machines) {
+    public PrintingHouse(double expectedIncome, double actualIncome, int printedEditionsCount, List<Employee> employees, List<Machine> machines) {
         this.expectedIncome = expectedIncome;
         this.actualIncome = actualIncome;
         this.printedEditionsCount = printedEditionsCount;
@@ -47,7 +46,7 @@ public class PrintingHouse {
         return employees;
     }
 
-    public List<Machines> getMachines(){
+    public List<Machine> getMachines(){
         return machines;
     }
 
@@ -82,6 +81,7 @@ public class PrintingHouse {
     }
 
     public void startPrinting(Edition ed, int count){
-
+        this.machines
+                .forEach(machine -> new Thread(() -> machine.print(ed, count)).start());
     }
 }

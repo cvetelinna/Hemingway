@@ -20,14 +20,18 @@ public class Main {
         System.out.println(test.price());
         System.out.println(test.calculateBookIncome());
 
-        List<Machines> mcs = new ArrayList<>();
-        mcs.add(new Machines(Color.BLACKANDWHITE, 3000, 2000));
-        mcs.add(new Machines(Color.BLACKANDWHITE, 3000, 2000));
-        mcs.add(new Machines(Color.BLACKANDWHITE, 3000, 2000));
+        List<Machine> mcs = new ArrayList<>();
+        mcs.add(new Machine(Color.BLACKANDWHITE, 3000, 2000));
+        mcs.add(new Machine(Color.BLACKANDWHITE, 3000, 2000));
+        mcs.add(new Machine(Color.BLACKANDWHITE, 3000, 2000));
 
 
     PrintingHouse ph = new PrintingHouse(12000, 12200, 60, ems, mcs);
         System.out.println(ph.sumSalaryExpenses());
+        ph.startPrinting(test, 1);
+        ph.startPrinting(test, 2);
+        System.out.println(ph);
+
     }
 
 }

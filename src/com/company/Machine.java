@@ -14,14 +14,14 @@ import java.util.UUID;
   За тази цел, трябва всяка машина да отпечатва изданията в отделна нишка
   и да се показва на коя машина кое издание се отпечатва в момента.
 */
-public class Machines {
+public class Machine {
     private Color color;
     private int maxCapacity;
     private int throughout;
     private final UUID uuid;
 
 
-    public Machines(Color color, int maxCapacity, int throughout) {
+    public Machine(Color color, int maxCapacity, int throughout) {
         this.color = color;
         this.maxCapacity = maxCapacity;
         this.throughout = throughout;
@@ -55,12 +55,8 @@ public class Machines {
     }
 
     public void print(Edition edition, int count){
-        if (count > maxCapacity){
-            var message = String.format("Max capacity is s% !", maxCapacity);
-            throw new ArithmeticException(message);
-        }
 
-        for (int i = 0; i < maxCapacity; i++) {
+        for (int i = 0; i < count; i++) {
             var str = String.format("Machine %s printed %s", this.uuid.toString(), edition.getTitle());
             System.out.println(str);
         }
