@@ -1,16 +1,4 @@
 package com.company;
-
-/*
-DONE - В печатницата работят два вида служители: оператори на печатни машини и мениджъри. И
-DONE - двата вида служители получават едно и също основно заплащане. Мениджърите получават
-DONE - определен процент върху основното заплащане, ако приходите на печатницата са повече от
-DONE - определена стойност, която се задава в печатницата.
-
-DONE: Приходите на печатницата са от отпечатаните издания, като се определя цена за отпечатване
-DONE: на 1 бр. от съответното издание, което клиентът на печатницата заплаща.
-
-*/
-
 import java.util.List;
 
 public class PrintingHouse {
@@ -80,8 +68,8 @@ public class PrintingHouse {
         return salary * employees.size();
     }
 
-    public void startPrinting(Edition ed, int count){
+    public void startPrinting(Edition ed){
         this.machines
-                .forEach(machine -> new Thread(() -> machine.print(ed, count)).start());
+                .forEach(machine -> new Thread(() -> machine.print(ed)).start());
     }
 }

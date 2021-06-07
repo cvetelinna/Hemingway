@@ -54,10 +54,10 @@ public class Machine {
                 '}';
     }
 
-    public void print(Edition edition, int count){
+    public void print(Edition edition){
 
-        for (int i = 0; i < count; i++) {
-            var str = String.format("Machine %s printed %s", this.uuid.toString(), edition.getTitle());
+        for (int i = 0; i < edition.getRequrestedCount(); i++) {
+            var str = String.format("Machine %s printed %s in %s color", this.uuid.toString(), edition.getTitle(), getColor());
             System.out.println(str);
         }
     }
